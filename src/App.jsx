@@ -6,8 +6,8 @@ import "./App.css";
 import { MantineProvider } from "@mantine/core";
 
 import { AppShell } from "@mantine/core";
-import AppHeader from "./components/AppHeader";
-import LandingBody from "./components/LandingBody";
+import OrderPage from "./components/OrderPage";
+import AppFooter from "./components/AppFooter";
 
 function App() {
   return (
@@ -15,12 +15,13 @@ function App() {
       <div className="App">
         <AppShell
           padding="md"
-          header={<AppHeader />}
+          // header={<AppHeader />}
           navbar={<AppNavbar />}
           styles={(theme) => ({
           })}
         >
-          <LandingBody />
+          <OrderPage />
+          <AppFooter/>
         </AppShell>
       </div>
     </MantineProvider>

@@ -38,9 +38,9 @@ const actions = [
 class AppSideBar extends React.Component {
   render() {
     return (
-      <Navbar width={{ base: 100 }} p="xs">
+      <Navbar width={{ base: 200 }} p="xs">
         <p>
-          Navbar
+          ML Art Service
         </p>
 
         <SpotlightProvider
