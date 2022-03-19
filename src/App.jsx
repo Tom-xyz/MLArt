@@ -1,34 +1,26 @@
 import React from "react";
 
-import logo from "./logo.svg";
-
-import Navbar from "./components/Navbar";
+import AppNavbar from "./components/AppSideBar";
 import "./App.css";
 
 import { MantineProvider } from "@mantine/core";
 
 import { AppShell } from "@mantine/core";
-import Header from "./components/Header";
-import Body from "./components/Body";
+import AppHeader from "./components/AppHeader";
+import LandingBody from "./components/LandingBody";
 
 function App() {
   return (
-    <MantineProvider theme={{ colorScheme: "dark" }} withGlobalStyles>
+    <MantineProvider >
       <div className="App">
         <AppShell
           padding="md"
-          header={<Header />}
-          navbar={<Navbar />}
+          header={<AppHeader />}
+          navbar={<AppNavbar />}
           styles={(theme) => ({
-            main: {
-              backgroundColor:
-                theme.colorScheme === "dark"
-                  ? theme.colors.dark[8]
-                  : theme.colors.gray[0],
-            },
           })}
         >
-          <Body />
+          <LandingBody />
         </AppShell>
       </div>
     </MantineProvider>
