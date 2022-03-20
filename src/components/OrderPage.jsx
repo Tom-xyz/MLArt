@@ -63,25 +63,22 @@ export const dropzoneChildren = (status, theme) => (
 function OrderPage(props) {
   const theme = useMantineTheme();
   return (
-
-    
     <Container size="xl">
-    <ArtShowcase />
+      <ArtShowcase />
       <Tabs grow position="center">
         <Tabs.Tab label="Simple">
-        <OrderMLForm/>
+          <OrderMLForm />
         </Tabs.Tab>
         <Tabs.Tab label="Advanced">
           <Dropzone
             onDrop={(files) => console.log("accepted files", files)}
             onReject={(files) => console.log("rejected files", files)}
             maxSize={3 * 1024 ** 2}
-
             accept={IMAGE_MIME_TYPE}
           >
             {(status) => dropzoneChildren(status, theme)}
           </Dropzone>
-          <OrderMLForm/>
+          <OrderMLForm />
         </Tabs.Tab>
       </Tabs>
     </Container>

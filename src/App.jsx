@@ -11,17 +11,16 @@ import AppFooter from "./components/AppFooter";
 
 function App() {
   return (
-    <MantineProvider >
+    <MantineProvider>
       <div className="App">
         <AppShell
           padding="md"
           // header={<AppHeader />}
           navbar={<AppNavbar />}
-          styles={(theme) => ({
-          })}
+          styles={(theme) => ({})}
         >
           <OrderPage />
-          <AppFooter/>
+          <AppFooter />
         </AppShell>
       </div>
     </MantineProvider>

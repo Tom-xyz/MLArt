@@ -1,5 +1,12 @@
+
+
+
 .footer{
-    margin-top: 1rem;
-    padding: 1rem;
-    width: 100%;
-  }
+
+}
+
+.footerDiv{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
