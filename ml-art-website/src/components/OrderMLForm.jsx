@@ -1,5 +1,5 @@
 import React from "react";
-import { useForm, formList } from "@mantine/form";
+import { useForm, formList, form } from "@mantine/form";
 import {
   TextInput,
   Switch,
@@ -28,6 +28,7 @@ function OrderMLForm() {
   const form = useForm({
     initialValues: {
       jobs: formList([{ input: "", jobType: "" }]),
+      voucherCode: "",
     },
   });
 
@@ -39,14 +40,25 @@ function OrderMLForm() {
         sx={{ flex: 1 }}
         {...form.getListInputProps("jobs", index, "input")}
       />
-      <Chips variant="filled" radius="xs" size="md" spacing="xs" {...form.getListInputProps('jobs', index, 'jobType')}>
-        <Chip value="create">Creative</Chip>
+      <Chips
+        variant="filled"
+        sx={{ flex: 1 }}
+        position="center"
+        radius="sm"
+        size="sm"
+        spacing="sm"
+        {...form.getListInputProps("jobs", index, "jobType")}
+      >
+        <Chip size="xs" value="create">
+          Creative
+        </Chip>
         <Chip value="classic">Classic</Chip>
         <Chip value="modern">Modern</Chip>
         <Chip value="abstract">Abstract</Chip>
       </Chips>
       <ActionIcon
         color="red"
+        sx={{ flex: 0 }}
         variant="hover"
         onClick={() => form.removeListItem("jobs", index)}
       >
@@ -55,24 +67,35 @@ function OrderMLForm() {
     </Group>
   ));
 
+  const credits = (
+    <Group mb="xs" sx={{ flex: 1 }}>
+      <TextInput
+        sx={{ flex: 1 }}
+        required
+        label="Voucher"
+        placeholder="Enter your voucher code"
+        {...form.getInputProps("voucherCode")}
+      />
+      <Text align="center" sx={{ flex: 1 }}>
+        Current Balance: X | Total Cost: X
+      </Text>
+    </Group>
+  );
+
   return (
-    <Box  mx="auto">
-      {fields.length > 0 ? (
-        <Group mb="xs" sx={{ flex: 1 }}>
-          <Text weight={750} size="sm" sx={{ flex: 1 }} align={"center"}>
-            Phrase
-          </Text>
-          <Text weight={750} size="sm" sx={{ flex: 1 }} align={"center"}>
-            Option
-          </Text>
-        </Group>
-      ) : (
-        <Text color="dimmed" align="center">
-          No one here...
+    <Box mx="auto">
+      <Group mb="xs" sx={{ flex: 1 }}>
+        <Text weight={750} size="sm" sx={{ flex: 1 }} align={"center"}>
+          Phrase
         </Text>
-      )}
+        <Text weight={750} size="sm" sx={{ flex: 1 }} align={"center"}>
+          Option
+        </Text>
+      </Group>
 
       {fields}
+
+      {credits}
 
       <Group position="right" mt="md">
         <Button

@@ -2,18 +2,28 @@ import { SpotlightProvider } from "@mantine/spotlight";
 import { useSpotlight } from "@mantine/spotlight";
 import { Home, Dashboard, FileText, Search } from "tabler-icons-react";
 import React from "react";
-import { Button, Group } from "@mantine/core";
+import { Button, Group, useMantineColorScheme } from "@mantine/core";
 
 function UserActions() {
   const spotlight = useSpotlight();
   let darkMode = false;
 
+  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
+
   return (
-    <Group position="center" style={{width: "10px"}}>
-      <Button size="md" onClick={spotlight.openSpotlight}>
+    <Group
+      position="center"
+      style={{ width: "10px", flex: 1, display: "flex" }}
+    >
+      <Button variant="outline" onClick={spotlight.openSpotlight} fullWidth>
         Actions
       </Button>
-      <Button size="md">Dark Mode</Button>
+      <Button variant="outline" onClick={spotlight.openSpotlight} fullWidth>
+        Info
+      </Button>
+      <Button variant="outline" onClick={() => toggleColorScheme()} fullWidth>
+        Dark Mode
+      </Button>
     </Group>
   );
 }

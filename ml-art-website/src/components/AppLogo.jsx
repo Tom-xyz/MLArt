@@ -7,8 +7,9 @@ import {
   Text,
   useMantineTheme,
 } from "@mantine/core";
-import logo from '../resources/app-icon.jpg'
+import logo from "../resources/app-icon.jpg";
 import React from "react";
+import PropTypes from "prop-types";
 
 function AppLogo() {
   const theme = useMantineTheme();
@@ -16,10 +17,7 @@ function AppLogo() {
   return (
     <Card p="lg">
       <Card.Section>
-        <Image
-          src={logo}
-          alt="Logo"
-        />
+        <Image src={logo} alt="Logo" />
       </Card.Section>
 
       <Group
@@ -31,5 +29,9 @@ function AppLogo() {
     </Card>
   );
 }
+
+AppLogo.propTypes = {
+  hidden: PropTypes.bool,
+};
 
 export default AppLogo;

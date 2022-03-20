@@ -10,20 +10,14 @@ import {
 } from "@mantine/core";
 import { Dropzone, IMAGE_MIME_TYPE, DropzoneStatus } from "@mantine/dropzone";
 import { Upload, Photo, X, Icon as TablerIcon } from "tabler-icons-react";
+import PropTypes from "prop-types";
+
 import React from "react";
 
 import ArtShowcase from "./ArtShowcase";
 import OrderMLForm from "./OrderMLForm";
-
-function getIconColor(status, theme) {
-  return status.accepted
-    ? theme.colors[theme.primaryColor][theme.colorScheme === "dark" ? 4 : 6]
-    : status.rejected
-    ? theme.colors.red[theme.colorScheme === "dark" ? 4 : 6]
-    : theme.colorScheme === "dark"
-    ? theme.colors.dark[0]
-    : theme.colors.gray[7];
-}
+import AppFooter from "./AppFooter";
+import AppLandingInfo from "./AppLandingInfo";
 
 function ImageUploadIcon(status, props) {
   if (status.accepted) {
@@ -43,11 +37,7 @@ export const dropzoneChildren = (status, theme) => (
     spacing="xl"
     style={{ minHeight: 220, pointerEvents: "none" }}
   >
-    <ImageUploadIcon
-      status={status}
-      style={{ color: getIconColor(status, theme) }}
-      size={80}
-    />
+    <ImageUploadIcon status={status} size={80} />
 
     <div>
       <Text size="xl" inline>
@@ -63,8 +53,9 @@ export const dropzoneChildren = (status, theme) => (
 function OrderPage(props) {
   const theme = useMantineTheme();
   return (
-    <Container size="xl">
+    <Container hidden={props.opened} size="xl">
       <ArtShowcase />
+      <AppLandingInfo />
       <Tabs grow position="center">
         <Tabs.Tab label="Simple">
           <OrderMLForm />
@@ -81,8 +72,14 @@ function OrderPage(props) {
           <OrderMLForm />
         </Tabs.Tab>
       </Tabs>
+
+      <AppFooter />
     </Container>
   );
 }
+
+OrderPage.propTypes = {
+  opened: PropTypes.bool,
+};
 
 export default OrderPage;
