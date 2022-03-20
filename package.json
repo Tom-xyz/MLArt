@@ -75,5 +75,21 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0"
-  }
+  },
+  "description": "<<<<<<< HEAD:ml-art-website/README.md # Generate ML Art (Simple Service)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tom-xyz/MLArtService.git"
+  },
+  "keywords": [
+    "ml",
+    "art"
+  ],
+  "author": "Thomas Boyle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tom-xyz/MLArtService/issues"
+  },
+  "homepage": "https://github.com/Tom-xyz/MLArtService#readme"
 }
