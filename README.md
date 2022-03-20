@@ -1,4 +1,3 @@
-<<<<<<< HEAD:ml-art-website/README.md
 # Generate ML Art (Simple Service)
 
 A simple website with backend to generate ML images based on user provided phrases.
