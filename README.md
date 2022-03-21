@@ -6,7 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Screenshot (Version 0.1)
 
-![](https://github.com/Tom-xyz/MLArtService/raw/main/src/resources/screenshot.png)
+![](https://github.com/Tom-xyz/MLArtWebsite/raw/main/src/resources/screenshot.png)
 
 ## TODO
 
